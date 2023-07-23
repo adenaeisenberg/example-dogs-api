@@ -2,6 +2,7 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(
       name: params["name"],
+      user_id: params["user_id"],
       age: params["age"],
       breed: params["breed"],
       owner: params["owner"],
