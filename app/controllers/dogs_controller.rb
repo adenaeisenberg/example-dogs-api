@@ -19,4 +19,13 @@ class DogsController < ApplicationController
     @dogs = Dog.all
     render :index
   end
+
+  def show
+    @dog = current_user.dogs.find_by(id: params[:id])
+    if authenticate_user
+      render :show
+    else
+      render json: { message: "This is not your dog!" }
+    end
+  end
 end

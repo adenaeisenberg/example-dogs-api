@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   post "/dogs" => "dogs#create"
   get "/dogs" => "dogs#index"
+  get "/dogs/:id" => "dogs#show"
 end
